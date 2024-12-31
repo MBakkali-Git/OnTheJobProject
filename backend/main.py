@@ -4,10 +4,6 @@ from backend.model import convert, predict
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {"message": "Welcome to the Weather Forecast API"}
-
 @app.post("/predict", status_code=200)
 async def get_prediction(weather_variable: str = Form(...), days: int = Form(...)):
     prediction_list = predict(weather_variable, days)
