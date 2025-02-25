@@ -18,6 +18,6 @@ if st.button("Get Prediction"):
     if weather_variable and days:
         prediction = get_prediction(weather_variable, days)
         for key, value in prediction["forecast"].items():
-            st.write(key,"-",f"{value:.2f}","°C")
+            st.write(key,"-",f"{value:.2f} °C")
     else:
         st.error("Please provide values for both weather variable and days")
